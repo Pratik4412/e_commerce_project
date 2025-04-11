@@ -10,6 +10,7 @@ const UploadCategoryModel = ({ close, fetchData }) => {
     name: "",
     image: "",
   });
+
   const [loading, setLoading] = useState(false);
   const handleOnChenge = (e) => {
     const { name, value } = e.target;
@@ -119,6 +120,7 @@ const UploadCategoryModel = ({ close, fetchData }) => {
             </div>
           </div>
           <button
+        
             className={`${
               data.name && data.image
                 ? "bg-primary-100 hover:bg-primary-200"

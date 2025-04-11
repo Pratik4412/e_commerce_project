@@ -12,7 +12,9 @@ const uploadImage = async (image) => {
     });
 
     return response;
-  } catch (error) {}
+  } catch (error) {
+    return error;
+  }
 };
 
 export default uploadImage;

@@ -12,7 +12,6 @@ const uploadImageController = async (req, res) => {
       error: false,
     });
 
-    console.log("uploadedImgae", file);
   } catch (error) {
     return res.status(500).json({
       message: error.message || error,

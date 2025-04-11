@@ -6,7 +6,7 @@ const subCategorySchema = new mongoose.Schema(
       type: String,
       default: "",
     },
-    imgae: {
+    image: {
       type: String,
       default: "",
     },
@@ -22,6 +22,6 @@ const subCategorySchema = new mongoose.Schema(
   }
 );
 
-const SubCategoryModel = mongoose.model("subCategory", subCategorySchema);
+const SubCategoryModel = mongoose.model("subcategory", subCategorySchema);
 
 export default SubCategoryModel;

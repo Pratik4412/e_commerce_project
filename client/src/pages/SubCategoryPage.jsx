@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import UploadCategoryModel from "../components/UploadCategoryModel";
+import UploadSubCategoryModel from "../components/UploadSubCategoryModel";
 
 const SubCategoryPage = () => {
   const [openAddSubCategory, setOpenAddSubCategory] = useState(false);
@@ -17,7 +17,7 @@ const SubCategoryPage = () => {
       </div>
 
       {openAddSubCategory && (
-        <UploadCategoryModel close={() => setOpenAddSubCategory(false)} />
+        <UploadSubCategoryModel close={() => setOpenAddSubCategory(false)} />
       )}
     </section>
   );
