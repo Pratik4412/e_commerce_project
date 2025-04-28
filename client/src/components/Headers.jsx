@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-// import logo from "../assets/logo.png";
-import logo from "../assets/MegaMart.png";
+import logo from "../assets/final_logo.png";
 import Search from "./Search";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
@@ -39,34 +38,29 @@ const Headers = () => {
           <Link to={"/"} className="h-full flex items-center">
             <img
               src={logo}
-              width={120}
+              width={150}
               height={30}
               alt="logo"
               className="hidden lg:block"
             />
             <img
               src={logo}
-              width={80}
-              height={30}
+              width={120}
+              height={40}
               alt="logo"
               className="lg:hidden"
             />
           </Link>
-          {/* search section */}
           <div className="hidden lg:block ">
             <Search />
           </div>
-          {/* login and my cart */}
           <div>
-            {/* login and my cart for mobile version */}
             <button
               className="text-neutral-600 lg:hidden"
               onClick={handleMobileUsers}
             >
               <FaRegUserCircle size={28} />
             </button>
-
-            {/* login and my cart for desktop version */}
             <div className="hidden lg:flex  items-center gap-10">
               {user?._id ? (
                 <div className="relative">
@@ -96,7 +90,6 @@ const Headers = () => {
               )}
               <button className="flex items-center gap-2 bg-green-800 hover:bg-green-700 px-3 py-2 rounded text-white">
                 <div className="animate-bounce">
-                  {/* add to my cart */}
                   <TiShoppingCart size={28} />
                 </div>
                 <div className="font-semibold">

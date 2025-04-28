@@ -24,35 +24,35 @@ const Category = () => {
     _id: "",
   });
 
-  const allCategory = useSelector((state) => state?.product?.allCategory);
-
-  useEffect(() => {
-    setCategoryData(allCategory);
-  }, []);
-  //  const fetchCategories = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const response = await Axios({
-  //       ...SummaryApi.getCategory,
-  //     });
-  //     const { data: ResponseData } = response;
-  //     if (response.data.success) {
-  //       setCategoryData(ResponseData.data);
-  //     }
-  //   } catch (error) {
-  //     return response.status(500).json({
-  //       message: error.message || error,
-  //       error: true,
-  //       success: false,
-  //     });
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  // const allCategory = useSelector((state) => state?.product?.allCategory);
 
   // useEffect(() => {
-  //   fetchCategories();
+  //   setCategoryData(allCategory);
   // }, []);
+   const fetchCategories = async () => {
+    try {
+      setLoading(true);
+      const response = await Axios({
+        ...SummaryApi.getCategory,
+      });
+      const { data: ResponseData } = response;
+      if (response.data.success) {
+        setCategoryData(ResponseData.data);
+      }
+    } catch (error) {
+      return response.status(500).json({
+        message: error.message || error,
+        error: true,
+        success: false,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
 
   const handleDeleteCategory = async () => {
     try {
@@ -101,6 +101,7 @@ const Category = () => {
                 alt={category.image}
                 className="w-full  object-scale-down"
               />
+              {/* <h2>{category.name}</h2> */}
               <div className="flex items-center gap-1">
                 <button
                   onClick={() => {

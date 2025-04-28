@@ -6,11 +6,15 @@ import SummaryApi from "../common/SummaryApi";
 import toast from "react-hot-toast";
 import AxiosToastError from "../utils/AxiosTostError";
 import Axios from "../utils/Axios";
-const UploadSubCategoryModel = ({ close, fetchData }) => {
+
+// video timing =  5:36: 31
+
+const EditSubCategory = ({ close, data, fetchData }) => {
   const [subCategoryData, setSubCategoryData] = useState({
-    name: "",
-    image: "",
-    category: [],
+    _id: data._id,
+    name: data.name,
+    image: data.image,
+    category: data.category || [],
   });
 
   const allCategory = useSelector((state) => state?.product?.allCategory);
@@ -57,7 +61,7 @@ const UploadSubCategoryModel = ({ close, fetchData }) => {
     e.preventDefault();
     try {
       const response = await Axios({
-        ...SummaryApi.createSubCategory,
+        ...SummaryApi.updateSubCategory,
         data: subCategoryData,
       });
 
@@ -80,7 +84,7 @@ const UploadSubCategoryModel = ({ close, fetchData }) => {
     <section className="fixed top-0 right-0 bottom-0 left-0 bg-neutral-800 bg-opacity-70 z-50 flex items-center justify-center p-4">
       <div className="w-full max-w-5xl bg-white p-4 rounded">
         <div className="flex items-center justify-between gap-3">
-          <h1 className="font-semibold ">Add Sub Category</h1>
+          <h1 className="font-semibold ">Edit Sub Category</h1>
           <button onClick={close}>
             <IoClose size={24} />
           </button>
@@ -197,4 +201,4 @@ const UploadSubCategoryModel = ({ close, fetchData }) => {
   );
 };
 
-export default UploadSubCategoryModel;
+export default EditSubCategory;
