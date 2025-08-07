@@ -24,7 +24,6 @@ const CategoryWiseProductDisplay = ({ id, name }) => {
       if (responseData.success) {
         setData(responseData.data);
       }
-      console.log("wise data", response);
     } catch (error) {
       AxiosToastError(error);
     } finally {
@@ -68,7 +67,6 @@ const CategoryWiseProductDisplay = ({ id, name }) => {
             return <CardProduct key={p._id + index + "productData"} data={p} />;
           })}
         </div>
-
         <div className="w-full absolute left-0 right-0 container mx-auto lg:flex items-center justify-between gap-4 hidden ">
           <button
             onClick={handleScrollleft}

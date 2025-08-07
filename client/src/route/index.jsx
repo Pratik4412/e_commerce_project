@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      {
+      {   
         path: "",
         element: <Home />,
       },
@@ -111,9 +111,9 @@ const router = createBrowserRouter([
       },
       {
         path: ":category",
-        children: [
-          {
-            path: ":subCategoty",
+        children: [ 
+          { 
+            path: ":subCategory",
             element: <ProductListPage />,
           },
         ],

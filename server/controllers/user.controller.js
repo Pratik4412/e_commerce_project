@@ -168,7 +168,6 @@ export async function loginController(request, response) {
   }
 }
 // loout controller
-
 export async function logoutController(request, response) {
   try {
     const userid = request.userId; //middleware
@@ -198,7 +197,6 @@ export async function logoutController(request, response) {
     });
   }
 }
-
 // avtar section
 export async function uploadAvtar(request, response) {
   try {
@@ -419,7 +417,6 @@ export async function resetPasswordController(request, response) {
     });
   }
 }
-
 //refresh token contorler
 
 export async function refreshToken(request, response) {

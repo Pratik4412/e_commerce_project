@@ -89,7 +89,9 @@ const ProductAdmin = () => {
         <div className="min-h-[55vh]">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 ">
             {product.map((p, index) => {
-              return <ProductCardAdmin data={p} />;
+              return (
+                <ProductCardAdmin data={p} key={p._id + "productId" + index} />
+              );
             })}
           </div>
         </div>

@@ -15,7 +15,8 @@ import successAlert from "../utils/SuccessAlert";
 const UploadProductPage = () => {
   const [data, setData] = useState({
     name: "",
-    image: [],
+
+    image: [],  
     category: [],
     subCategory: [],
     unit: "",
